@@ -19,10 +19,7 @@ namespace AddressBookTestMsTest
         {
             factory = AutoPocoContainer.Configure(x =>
             {
-                x.Conventions(c => 
-                { 
-                    c.UseDefaultConventions(); 
-                });
+                x.Conventions(c => c.UseDefaultConventions());
                 x.AddFromAssemblyContainingType<Person>();
                 x.Include<Person>()
                     .Setup(c => c.FirstName).Use<FirstNameSource>()
